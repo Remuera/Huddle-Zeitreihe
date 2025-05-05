@@ -23,7 +23,7 @@ window.onload = function () {
       // J (Index 9): Frage 3 – Veränderungen
       const zeitIndex = 5;
       const teamIndex = 6;
-      const questionIndices = [7, 8, 9];^
+      const questionIndices = [7, 8, 9];
       
       // Erstelle eindeutige Dropdownwerte
       const zeitSet = new Set();

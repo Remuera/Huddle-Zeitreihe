@@ -52,7 +52,7 @@ main {
   justify-content: center;
   margin-bottom: 40px;
 }
- 
+
 /* Wrapper für einzelne Charts */
 .chart-wrapper {
   flex: 1 1 calc(33% - 40px);
