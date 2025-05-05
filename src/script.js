@@ -19,7 +19,7 @@ window.onload = function () {
       // F (Index 5): Zeitpunkt (z.B. "2025_02")
       // G (Index 6): Team
       // H (Index 7): Frage 1 – Stimmung
-      // I (Index 8): Frage 2 – Auslastung
+      // I (Index 8): Frage 2 – AuslastungF
       // J (Index 9): Frage 3 – Veränderungen
       const zeitIndex = 5;
       const teamIndex = 6;
@@ -269,42 +269,56 @@ window.onload = function () {
             commentsTitle.textContent = "Kommentare";
             commentsContainer.appendChild(commentsTitle);
 
-            // Tabelle erstellen
-            const table = document.createElement("table");
-            
-            // Tabellenkopf
-            const thead = document.createElement("thead");
-            const headerRow = document.createElement("tr");
-            const thTeam = document.createElement("th");
-            thTeam.textContent = "Team";
-            thTeam.style.textAlign = "left";
-            const thComment = document.createElement("th");
-            thComment.textContent = "Kommentare";
-            thComment.style.textAlign = "left";
-            headerRow.appendChild(thTeam);
-            headerRow.appendChild(thComment);
-            thead.appendChild(headerRow);
-            table.appendChild(thead);
+              // Tabelle erstellen
+const table = document.createElement("table");
+table.style.borderCollapse = "collapse"; // Sorgt für einzelne, nicht doppelte Ränder
+table.style.width = "100%"; // Optional: volle Breite
 
-            // Tabellenteil
-            const tbody = document.createElement("tbody");
-            commentRows.forEach(row => {
-                const tr = document.createElement("tr");
-                
-                const tdTeam = document.createElement("td");
-                // Teamname plus 4 Nicht-Brechende Leerzeichen
-                tdTeam.textContent = row[6].toString().trim() + "\u00A0\u00A0\u00A0\u00A0";
-                
-                const tdComment = document.createElement("td");
-                tdComment.textContent = row[10].toString().trim();
-                tdComment.style.textAlign = "left"; // Kommentare linksbÃ¼ndig
+// Tabellenkopf
+const thead = document.createElement("thead");
+const headerRow = document.createElement("tr");
 
-                tr.appendChild(tdTeam);
-                tr.appendChild(tdComment);
-                tbody.appendChild(tr);
-            });
-            table.appendChild(tbody);
-            commentsContainer.appendChild(table);
+const thTeam = document.createElement("th");
+thTeam.textContent = "Team";
+thTeam.style.textAlign = "left";
+thTeam.style.border = "1px solid black";  // Rahmen hinzufügen
+thTeam.style.padding = "4px";               // Etwas Innenabstand
+
+const thComment = document.createElement("th");
+thComment.textContent = "Kommentare";
+thComment.style.textAlign = "left";
+thComment.style.border = "1px solid black";
+thComment.style.padding = "4px";
+
+headerRow.appendChild(thTeam);
+headerRow.appendChild(thComment);
+thead.appendChild(headerRow);
+table.appendChild(thead);
+
+// Tabellenteil
+const tbody = document.createElement("tbody");
+commentRows.forEach(row => {
+    const tr = document.createElement("tr");
+    
+    const tdTeam = document.createElement("td");
+    // Teamname plus 4 Nicht-Brechende Leerzeichen
+    tdTeam.textContent = row[6].toString().trim() + "\u00A0\u00A0\u00A0\u00A0";
+    tdTeam.style.border = "1px solid black";
+    tdTeam.style.padding = "4px";
+    
+    const tdComment = document.createElement("td");
+    tdComment.textContent = row[10].toString().trim();
+    tdComment.style.textAlign = "left"; // Kommentare linksbündig
+    tdComment.style.border = "1px solid black";
+    tdComment.style.padding = "4px";
+
+    tr.appendChild(tdTeam);
+    tr.appendChild(tdComment);
+    tbody.appendChild(tr);
+});
+table.appendChild(tbody);
+commentsContainer.appendChild(table);
+
             }
 
       } // Ende renderCharts
