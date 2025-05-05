@@ -1,21 +1,70 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+/* Basislayout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
 }
 
-html, body {
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
   margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+  font-size: 1.8em;
+}
+
+.menus {
+  margin-top: 10px;
+}
+
+.menus label {
+  margin: 0 5px;
+  font-size: 1em;
+}
+
+.menus select {
+  padding: 5px;
+  font-size: 1em;
+  margin-right: 15px;
 }
 
 main {
-  margin: auto;
-  width: 50%;
   padding: 20px;
 }
 
-main > h1 {
+#overallTitle {
   text-align: center;
-  font-size: 3.5em;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+/* Layout der Chart-Gruppen */
+.chart-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+ 
+/* Wrapper für einzelne Charts */
+.chart-wrapper {
+  flex: 1 1 calc(33% - 40px);
+  max-width: 600px;
+  min-width: 300px;
+}
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Festgelegte Höhe für die Area Charts */
+.area-chart canvas {
+  height: 300px !important;
 }
