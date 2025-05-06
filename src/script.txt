@@ -39,20 +39,27 @@ window.onload = function () {
       
       const zeitSelect = document.getElementById("zeitSelect");
       const teamSelect = document.getElementById("teamSelect");
+
+      let lastValueZeit = null; // Variable für den letzten Wert
+      let lastValueTeam = null; // Variable für den letzten Wert
       
       zeiten.forEach(z => {
         let option = document.createElement("option");
         option.value = z;
         option.textContent = "Zeitpunkt " + z;
         zeitSelect.appendChild(option);
+        lastValueZeit = z; // Speichert den letzten Wert
       });
+      zeitSelect.value = lastValueZeit; // Setzt den letzten Wert als ausgewählte Option
       
       teams.forEach(t => {
         let option = document.createElement("option");
         option.value = t;
         option.textContent = "Team " + t;
         teamSelect.appendChild(option);
+        lastValueTeam = t;
       });
+      teamSelect.value = lastValueTeam;
       
       // Filterfunktion für aktuelle Kombination
       function filterRows(selectedZeit, selectedTeam) {
