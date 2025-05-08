@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Huddle Board IT SGKB</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bibliotheken aus dem Internet (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header>
+    <header>
+      <h1>Huddle Board IT SGKB <span style="font-size: small; font-style: italic;">(Für Kommentare nach unten scrollen)</span></h1>
+  </header>
+    <div class="menus">
+      <label for="zeitSelect" title="Zeitpunkt der Datenerhebung in Form Jahr_Monat">Zeitpunkt:</label>
+      <select id="zeitSelect"></select>
+      <label for="teamSelect" title="Wähle das Team. Hinweis Team So = alle Teamleiter">Team:</label>
+      <select id="teamSelect"></select>
+    </div>
+  </header>
+  <main>
+    <!-- Überschrift, die die aktuell ausgewählten Filter anzeigt -->
+    <h2 id="overallTitle"></h2>
+    <!-- Container für alle Charts -->
+    <div id="chartsContainer">
+      <!-- Oben: 3 Pie Charts; Unten: 3 Area Charts -->
+      <div id="pieCharts" class="chart-group"></div>
+      <div id="areaCharts" class="chart-group"></div>
+      <div id="commentsTable"></div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
