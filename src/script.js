@@ -46,7 +46,7 @@ window.onload = function () {
       zeiten.forEach(z => {
         let option = document.createElement("option");
         option.value = z;
-        option.textContent = "Zeitpunkt " + z;
+        option.textContent = z;
         zeitSelect.appendChild(option);
         lastValueZeit = z; // Speichert den letzten Wert
       });
@@ -55,11 +55,11 @@ window.onload = function () {
       teams.forEach(t => {
         let option = document.createElement("option");
         option.value = t;
-        option.textContent = "Team " + t;
+        option.textContent = t;
         teamSelect.appendChild(option);
         lastValueTeam = t;
       });
-      teamSelect.value = lastValueTeam;
+ //     teamSelect.value = lastValueTeam;
       
       // Filterfunktion für aktuelle Kombination
       function filterRows(selectedZeit, selectedTeam) {
@@ -134,7 +134,7 @@ window.onload = function () {
         
         // Aktualisiere den Gesamttitel
         const overallTitle = document.getElementById("overallTitle");
-        overallTitle.textContent = "Team " + selectedTeam + " " + selectedZeit;
+        overallTitle.textContent = selectedTeam + " " + selectedZeit;
         
         // Leere die Chart-Container
         document.getElementById("pieCharts").innerHTML = "";
@@ -179,7 +179,7 @@ window.onload = function () {
               plugins: {
                 title: {
                   display: true,
-                  text: "Team " + selectedTeam + " " + selectedZeit + " – " + q.header,
+                  text: selectedTeam + " " + selectedZeit + " – " + q.header,
                   font: { size: 18 }
                 },
                 legend: { position: "bottom" },
@@ -249,7 +249,7 @@ window.onload = function () {
               },
               scales: {
                 x: {
-                  title: { display: true, text: "Zeitpunkt" },
+                //  title: { display: true, text: "Zeitpunkt" },
                   stacked: true
                 },
                 y: {
